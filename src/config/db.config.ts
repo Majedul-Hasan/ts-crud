@@ -1,15 +1,20 @@
-import mongoose from 'mongoose';
+import mongoose, { ConnectOptions } from "mongoose";
 
 type TInput = {
   db: string;
 }
+
 export default ({db}: TInput) => {
   
   const con = () => {
     mongoose
       .connect(
         db,
-        { }
+        {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+     
+      } as ConnectOptions
       )
       .then(() => {
         return console.info(`Successfully connected to ${db}`);
