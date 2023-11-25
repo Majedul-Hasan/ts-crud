@@ -3,8 +3,8 @@
 
 ### Set up the Project
 
-- Create a new Node.js Express project.
-- Set up a MongoDB database using Mongoose for storing user and order data.
+- Create a new Node.js Express project. ✅
+- Set up a MongoDB database using Mongoose for storing user and order data. ✅
 
 ### Define Data Models
 
