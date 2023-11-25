@@ -20,7 +20,14 @@ const getallUsersFromDB = async () => {
 //  const result = await UserModel.find();
  return result;
 };
+const getAnUserFromDB = async (id) => {
+
+    const result = await await UserModel.findOne({userId: id}); 
+//  const result = await UserModel.find();
+ return result;
+};
 export const UserServices = {
   createUserIntoDB,
-  getallUsersFromDB
+  getallUsersFromDB,
+  getAnUserFromDB
 };
