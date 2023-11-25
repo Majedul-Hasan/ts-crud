@@ -18,10 +18,17 @@ export interface fullName extends Document {
   lastName: string;
  
 }
+export interface Order extends Document {
+   productName: string;
+   price: number;
+  quantity: number;
+ 
+}
 
 
 export interface IUser extends Document {
   email: string;
+  userId: number;
   fullName?: fullName;
   gender?: Gender;
   address?: Address;
@@ -30,7 +37,7 @@ export interface IUser extends Document {
   password: string;
   username: string;
   hobbies: [string, string]
-  orders: []
+  orders: [Order]
 
 }
 
@@ -61,6 +68,7 @@ const UserSchema: Schema = new Schema(
     country: { type: String }
   },
   password: { type: String, required: true},
+ 
   username: { type: String, required: true, unique: true},
 
   // Gets the Mongoose enum from the TypeScript enum
