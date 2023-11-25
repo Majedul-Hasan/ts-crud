@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { type } from 'os';
+import bcrypt from 'bcrypt';
 
 export enum Gender {
   male = 'male',
@@ -37,7 +37,7 @@ export interface IUser extends Document {
   isActive: boolean;
   password: string;
   username: string;
-  hobbies: [string, string]
+  hobbies: [string]
   orders: [Order]
 
 }
@@ -86,6 +86,22 @@ const UserSchema: Schema = new Schema(
             }]
   
 });
+
+
+UserSchema.pre('save', async function (next) {
+  // hashing user password
+  const user = this;
+  user.password = await bcrypt.hash(
+    user.password,
+    Number(10)
+  );
+
+
+
+  next();
+});
+
+
 
 // Export the model and return your IUser interface
 export default mongoose.model<IUser>('User', UserSchema);
