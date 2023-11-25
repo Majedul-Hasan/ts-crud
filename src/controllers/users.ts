@@ -23,8 +23,19 @@ const getUsers = async (req: Request , res:Response ) => {
       data: result,
     });
 }
+const getUsersByid = async (req: Request , res:Response ) => {
+  // console.log(req.body)
+  const {id} = req.params;
+   const result = await UserServices.getAnUserFromDB(id)
+  //  console.log(result)
+  
+    res.status(200).json({
+      success: true,
+      data: result,
+    });
+}
 
 
 export  {
-  createUser, getUsers
+  createUser, getUsers, getUsersByid
 };
