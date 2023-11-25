@@ -34,8 +34,19 @@ const getUsersByid = async (req: Request , res:Response ) => {
       data: result,
     });
 }
+const deleteUsersByid = async (req: Request , res:Response ) => {
+  // console.log(req.body)
+  const {id} = req.params;
+   const result = await UserServices.deleteAnUserFromDB(id)
+  //  console.log(result)
+  
+    res.status(200).json({
+      success: true,
+     message: 'User is deleted successfully',
+    });
+}
 
 
 export  {
-  createUser, getUsers, getUsersByid
+  createUser, getUsers, getUsersByid, deleteUsersByid
 };
