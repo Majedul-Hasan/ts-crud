@@ -68,7 +68,7 @@ const UserSchema: Schema = new Schema(
     city: { type: String },
     country: { type: String }
   },
-  password: { type: String, required: [true, 'password is required' ]  },
+  password: { type: String, required: [true, 'password is required' ] ,  maxlength: [60, 'password can not be more than 60 characters'], minlangth: [6, 'password can not be less than 6 characters']  },
  
   username: { type: String, required: true, unique: true},
 
