@@ -28,6 +28,7 @@ export interface Order extends Document {
 
 export interface IUser extends Document {
   email: string;
+ 
   userId: number;
   fullName?: fullName;
   gender?: Gender;
@@ -67,7 +68,7 @@ const UserSchema: Schema = new Schema(
     city: { type: String },
     country: { type: String }
   },
-  password: { type: String, required: true},
+  password: { type: String, required: [true, 'password is required' ]  },
  
   username: { type: String, required: true, unique: true},
 
