@@ -11,7 +11,7 @@
 - Create Mongoose models for User data based on the provided data structure. (You can follow sample-data.json file for ideas) ✅
 - Define appropriate data types, validations. ✅
 
-### Data Types List
+### Data Types List ✅
 
 - `userId` (number): A unique identifier for the user.
 - `username` (string): Denotes the user's unique username, ensuring uniqueness across the system.
@@ -39,7 +39,7 @@
 
 ### 1. Create a new user
 
-- Endpoint: **POST /api/users**
+- Endpoint: **POST /api/users** ✅
 - Request Body:
 
 ```json
@@ -95,7 +95,7 @@
 }
 ```
 
-### 2. Retrieve a list of all users
+### 2. Retrieve a list of all users ✅
 
 - Endpoint: **GET /api/users**
 - Response: List of user objects. Each object should only contain `username`, `fullName`, `age`, `email`, `address` . Apply suitable field filtering to exclusively retrieve the necessary information. 
@@ -124,7 +124,7 @@
 }
 ```
 
-### 3. Retrieve a specific user by ID
+### 3. Retrieve a specific user by ID ✅
 
 - Endpoint: **GET /api/users/:userId**
 
@@ -192,7 +192,7 @@
 }
 ```
 
-### 5. Delete a user
+### 5. Delete a user ✅
 
 - Endpoint: **DELETE /api/users/:userId**
 
